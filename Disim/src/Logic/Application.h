@@ -5,12 +5,15 @@ struct GLFWwindow;
 class Application {
 public:
 	Application();
-  ~Application();
+  virtual ~Application();
 
 	void run();
 
+  virtual void render() = 0;
+  virtual void update(double delta) = 0;
+
 private:
-	void InitWindowHandle();
+	void initWindowHandle();
 
   bool _running;
 	GLFWwindow* _window;

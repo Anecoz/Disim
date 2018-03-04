@@ -32,7 +32,7 @@ Application::~Application()
 void Application::run()
 {
 	// Create gl window stuff
-	InitWindowHandle();
+	initWindowHandle();
 
 	// Init Main loop stuff
 	using namespace std::chrono;
@@ -59,11 +59,12 @@ void Application::run()
 			updates++;
 			delta--;
 
-			// Do updates here (to logic)
+      update(delta);
 		}
 
 		// Render
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    render();
 		glfwSwapBuffers(_window);
 		// Render stop
 
@@ -78,7 +79,7 @@ void Application::run()
   // Do cleanup here
 }
 
-void Application::InitWindowHandle()
+void Application::initWindowHandle()
 {
 	glfwWindowHint(GLFW_SAMPLES, 4);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);

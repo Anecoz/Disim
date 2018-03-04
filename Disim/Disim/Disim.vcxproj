@@ -23,6 +23,7 @@
     <ClCompile Include="..\src\Input\MouseButtonInput.cpp" />
     <ClCompile Include="..\src\Input\MousePosInput.cpp" />
     <ClCompile Include="..\src\Logic\Application.cpp" />
+    <ClCompile Include="..\src\Logic\DisimApplication.cpp" />
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -30,6 +31,7 @@
     <ClInclude Include="..\src\Input\MouseButtonInput.h" />
     <ClInclude Include="..\src\Input\MousePosInput.h" />
     <ClInclude Include="..\src\Logic\Application.h" />
+    <ClInclude Include="..\src\Logic\DisimApplication.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

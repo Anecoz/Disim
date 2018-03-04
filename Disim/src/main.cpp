@@ -1,7 +1,7 @@
-#include "Logic/Application.h"
+#include "Logic/DisimApplication.h"
 
 int main()
 {
-  Application app;
+  DisimApplication app;
   app.run();
 }

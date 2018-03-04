@@ -26,6 +26,9 @@
     <ClCompile Include="..\src\Input\MousePosInput.cpp">
       <Filter>Input</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Logic\DisimApplication.cpp">
+      <Filter>Logic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Logic\Application.h">
@@ -39,6 +42,9 @@
     </ClInclude>
     <ClInclude Include="..\src\Input\MousePosInput.h">
       <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Logic\DisimApplication.h">
+      <Filter>Logic</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
