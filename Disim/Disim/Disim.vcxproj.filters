@@ -11,6 +11,18 @@
     <Filter Include="Input">
       <UniqueIdentifier>{858db19c-cbaf-47e2-9cd0-9d8cc5216272}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{e25053bd-7e78-45ec-9d20-ad7839b0c6d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Lowlevel">
+      <UniqueIdentifier>{0be8b549-a50a-47f6-8495-3921274670d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{0b0b4a8f-fb89-4e31-bcf1-2aefa37dca24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LodePng">
+      <UniqueIdentifier>{68197236-d619-43b7-b03b-854e409c2e4b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
@@ -29,6 +41,36 @@
     <ClCompile Include="..\src\Logic\DisimApplication.cpp">
       <Filter>Logic</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Graphics\Camera.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Lowlevel\Fbo.cpp">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Lowlevel\IndexedVertexArray.cpp">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Lowlevel\Texture.cpp">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Lowlevel\VertexArray.cpp">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Lowlevel\Shader.cpp">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utils\ShaderUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utils\GraphicsUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\LodePng\lodepng.cpp">
+      <Filter>LodePng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\DrawableCube.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Logic\Application.h">
@@ -45,6 +87,36 @@
     </ClInclude>
     <ClInclude Include="..\src\Logic\DisimApplication.h">
       <Filter>Logic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Graphics\Camera.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Graphics\Lowlevel\Fbo.h">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Graphics\Lowlevel\IndexedVertexArray.h">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Graphics\Lowlevel\Texture.h">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Graphics\Lowlevel\VertexArray.h">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Graphics\Lowlevel\Shader.h">
+      <Filter>Graphics\Lowlevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utils\ShaderUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utils\GraphicsUtils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LodePng\lodepng.h">
+      <Filter>LodePng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Graphics\DrawableCube.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

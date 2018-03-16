@@ -22,6 +22,9 @@ Application::Application() :
 	glfwSetErrorCallback(errorCallback);
 	if (!glfwInit())
 		exit(-1);
+
+  // Create gl window stuff
+  initWindowHandle();
 }
 
 Application::~Application()
@@ -31,9 +34,6 @@ Application::~Application()
 
 void Application::run()
 {
-	// Create gl window stuff
-	initWindowHandle();
-
 	// Init Main loop stuff
 	using namespace std::chrono;
 	auto lastTime = std::chrono::duration_cast<nanoseconds>(high_resolution_clock::now().time_since_epoch()).count();
@@ -49,6 +49,8 @@ void Application::run()
 
 	// Main loop
 	while (_running  && !glfwWindowShouldClose(_window)) {
+    if (KeyInput::isKeyClicked(GLFW_KEY_ESCAPE)) break;
+
 		auto now = std::chrono::duration_cast<nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
 		delta += (now - lastTime) / ns;
 		lastTime = now;
@@ -71,7 +73,7 @@ void Application::run()
 		frames++;
 		if (duration_cast<milliseconds>(high_resolution_clock::now().time_since_epoch()).count() - timer > 1000) {
 			timer += 1000;
-			glfwSetWindowTitle(_window, std::string(std::to_string(updates) + ups + std::to_string(frames) + fps).c_str());
+			glfwSetWindowTitle(_window, std::string("Disim " + std::to_string(updates) + ups + std::to_string(frames) + fps).c_str());
 			updates = 0;
 			frames = 0;
 		}
@@ -93,7 +95,7 @@ void Application::initWindowHandle()
 	}
 
 	glfwMakeContextCurrent(_window);
-	glfwSwapInterval(0); // Vsync or not
+	glfwSwapInterval(1); // Vsync or not
 
 	// Set input callbacks
 	glfwSetKeyCallback(_window, KeyInput::invoke);

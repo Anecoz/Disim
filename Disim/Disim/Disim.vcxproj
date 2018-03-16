@@ -19,19 +19,39 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Graphics\Camera.cpp" />
+    <ClCompile Include="..\src\Graphics\DrawableCube.cpp" />
+    <ClCompile Include="..\src\Graphics\Lowlevel\Fbo.cpp" />
+    <ClCompile Include="..\src\Graphics\Lowlevel\IndexedVertexArray.cpp" />
+    <ClCompile Include="..\src\Graphics\Lowlevel\Shader.cpp" />
+    <ClCompile Include="..\src\Graphics\Lowlevel\Texture.cpp" />
+    <ClCompile Include="..\src\Graphics\Lowlevel\VertexArray.cpp" />
     <ClCompile Include="..\src\Input\KeyInput.cpp" />
     <ClCompile Include="..\src\Input\MouseButtonInput.cpp" />
     <ClCompile Include="..\src\Input\MousePosInput.cpp" />
+    <ClCompile Include="..\src\LodePng\lodepng.cpp" />
     <ClCompile Include="..\src\Logic\Application.cpp" />
     <ClCompile Include="..\src\Logic\DisimApplication.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Utils\GraphicsUtils.cpp" />
+    <ClCompile Include="..\src\Utils\ShaderUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\Graphics\Camera.h" />
+    <ClInclude Include="..\src\Graphics\DrawableCube.h" />
+    <ClInclude Include="..\src\Graphics\Lowlevel\Fbo.h" />
+    <ClInclude Include="..\src\Graphics\Lowlevel\IndexedVertexArray.h" />
+    <ClInclude Include="..\src\Graphics\Lowlevel\Shader.h" />
+    <ClInclude Include="..\src\Graphics\Lowlevel\Texture.h" />
+    <ClInclude Include="..\src\Graphics\Lowlevel\VertexArray.h" />
     <ClInclude Include="..\src\Input\KeyInput.h" />
     <ClInclude Include="..\src\Input\MouseButtonInput.h" />
     <ClInclude Include="..\src\Input\MousePosInput.h" />
+    <ClInclude Include="..\src\LodePng\lodepng.h" />
     <ClInclude Include="..\src\Logic\Application.h" />
     <ClInclude Include="..\src\Logic\DisimApplication.h" />
+    <ClInclude Include="..\src\Utils\GraphicsUtils.h" />
+    <ClInclude Include="..\src\Utils\ShaderUtils.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
