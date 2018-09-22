@@ -36,11 +36,11 @@ void Application::run()
 {
 	// Init Main loop stuff
 	using namespace std::chrono;
-	auto lastTime = std::chrono::duration_cast<nanoseconds>(high_resolution_clock::now().time_since_epoch()).count();
+	auto lastTime = duration_cast<nanoseconds>(high_resolution_clock::now().time_since_epoch()).count();
   auto delta = 0.0;
   auto ns = 1000000000.0 / 60.0;
-  auto timer = std::chrono::duration_cast<milliseconds>(high_resolution_clock::now().time_since_epoch()).count();
-	int updates = 0;
+  auto timer = duration_cast<milliseconds>(high_resolution_clock::now().time_since_epoch()).count();
+	//int updates = 0;
 	int frames = 0;
 	std::string ups = " ups ";
   std::string fps = " fps";
@@ -51,18 +51,23 @@ void Application::run()
 	while (_running  && !glfwWindowShouldClose(_window)) {
     if (KeyInput::isKeyClicked(GLFW_KEY_ESCAPE)) break;
 
-		auto now = std::chrono::duration_cast<nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
-		delta += (now - lastTime) / ns;
-		lastTime = now;
+		auto now = duration_cast<nanoseconds>(std::chrono::high_resolution_clock::now().time_since_epoch()).count();
+		delta = (now - lastTime) / ns;
+
+    // Logic update
+    glfwPollEvents();
+    update(delta);
+    lastTime = now;
 
 		// Logic Update
-		if (delta >= 1.0) {
+		/*if (delta >= 1.0) {
 			glfwPollEvents();
 			updates++;
 			delta--;
 
       update(delta);
-		}
+      lastTime = now;
+		}*/
 
 		// Render
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -73,8 +78,8 @@ void Application::run()
 		frames++;
 		if (duration_cast<milliseconds>(high_resolution_clock::now().time_since_epoch()).count() - timer > 1000) {
 			timer += 1000;
-			glfwSetWindowTitle(_window, std::string("Disim " + std::to_string(updates) + ups + std::to_string(frames) + fps).c_str());
-			updates = 0;
+			glfwSetWindowTitle(_window, std::string("Disim " + std::to_string(frames) + fps).c_str());
+			//updates = 0;
 			frames = 0;
 		}
 	}
