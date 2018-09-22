@@ -1,9 +1,12 @@
 #include "DisimApplication.h"
 #include <GLFW/glfw3.h>
 
+#include <iostream>
+
 DisimApplication::DisimApplication()
   : _camera(glm::vec3(5.f, 5.f, 5.f))
 {
+  
 }
 
 void DisimApplication::render()

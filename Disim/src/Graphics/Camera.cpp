@@ -30,13 +30,14 @@ void Camera::update(double delta)
   freelookUpdate(delta);  
 
   _prevFreelookMousePos = MousePosInput::getPosition();
+  //std::cout << "Camera at: " << _position.x << ", " << _position.y << ", " << _position.z << std::endl;
 }
 
 void Camera::freelookUpdate(double delta)
 {
   handleFreelookInput(delta);
 
-  auto trans = glm::vec3(_position.x * -1, _position.y * -1, _position.z * -1);
+  auto trans = _position;// glm::vec3(_position.x * -1, _position.y * -1, _position.z * -1);
   glm::mat4 view = glm::translate(trans);
   view *= glm::rotate((float)_yaw, glm::vec3(0, 1, 0));
   view *= glm::rotate((float)_pitch, glm::vec3(1, 0, 0));
@@ -45,7 +46,7 @@ void Camera::freelookUpdate(double delta)
 
   _right = glm::normalize(view[0]);
   _up = glm::normalize(view[1]);
-  _forward = glm::normalize(view[2]);
+  _forward = -glm::normalize(view[2]);
 }
 
 void Camera::handleFreelookInput(double delta)
@@ -59,9 +60,9 @@ void Camera::handleFreelookInput(double delta)
   if (KeyInput::isKeyDown(GLFW_KEY_LEFT_ALT))
     speedModifier += 300.0;
 
-  GLfloat speed = (speedModifier*delta)*10.0;
-  auto dx = (float)sin(_yaw) * speed;
-  auto dz = (float)cos(_yaw) * speed;
+  GLfloat speed = (speedModifier*delta);
+  //auto dx = (float)sin(_yaw) * speed;
+  //auto dz = (float)cos(_yaw) * speed;
 
   glm::vec3 movement;
 
@@ -79,13 +80,13 @@ void Camera::handleFreelookInput(double delta)
   }
   if (KeyInput::isKeyDown(GLFW_KEY_A))
   {
-    movement += _right * speed;
+    movement -= _right * speed;
     //movement.x -= dz;
     //movement.z -= dx;
   }
   if (KeyInput::isKeyDown(GLFW_KEY_D))
   {
-    movement -= _right * speed;
+    movement += _right * speed;
     //movement.x += dz;
     //movement.z += dx;
   }

@@ -15,6 +15,7 @@ public:
   void draw(const Camera& camera);
 
 private:
+  glm::mat4 _modelMatrix;
   std::unique_ptr<IndexedVertexArray> _mesh;
   Shader _shader;
 };

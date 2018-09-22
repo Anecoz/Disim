@@ -11,6 +11,7 @@ class Shader
 public:
 	Shader();
 	Shader(const std::string& vertPath, const std::string& fragPath);
+  Shader(const std::string& vertPath, const std::string& tescPath, const std::string& tesePath, const std::string& fragPath);
 	~Shader();
 
 	static const GLint VERTEX_ATTRIB_LOC = 0;

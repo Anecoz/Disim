@@ -100,7 +100,7 @@ void Application::initWindowHandle()
 	}
 
 	glfwMakeContextCurrent(_window);
-	glfwSwapInterval(0); // Vsync or not
+	glfwSwapInterval(1); // Vsync or not
 
 	// Set input callbacks
   glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
@@ -120,4 +120,9 @@ void Application::initWindowHandle()
   std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
   std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
   std::cout << "Supported OpenGL version: " << glGetString(GL_VERSION) << std::endl;
+  GLint maxPatchVertices = 0;
+  glGetIntegerv(GL_MAX_PATCH_VERTICES, &maxPatchVertices);
+  std::cout << "Max supported patch vertices: " << std::to_string(maxPatchVertices) << std::endl;
+  glPatchParameteri(GL_PATCH_VERTICES, 3);
+  glDisable(GL_CULL_FACE);
 }

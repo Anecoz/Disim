@@ -15,6 +15,7 @@ public:
 	virtual ~IndexedVertexArray();
 	
 	void draw() override;
+  void drawTesselated();
 	
 private:
 	GLuint _ibo;

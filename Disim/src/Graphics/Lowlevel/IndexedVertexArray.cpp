@@ -35,3 +35,9 @@ void IndexedVertexArray::draw() {
 	glDrawElements(GL_TRIANGLES, _count, GL_UNSIGNED_INT, 0L);
 	unbind();
 }
+
+void IndexedVertexArray::drawTesselated() {
+  bind();
+  glDrawElements(GL_PATCHES, _count, GL_UNSIGNED_INT, 0L);
+  unbind();
+}
