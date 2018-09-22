@@ -98,6 +98,7 @@ void Application::initWindowHandle()
 	glfwSwapInterval(1); // Vsync or not
 
 	// Set input callbacks
+  glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetKeyCallback(_window, KeyInput::invoke);
 	glfwSetCursorPosCallback(_window, MousePosInput::invoke);
 	glfwSetMouseButtonCallback(_window, MouseButtonInput::invoke);

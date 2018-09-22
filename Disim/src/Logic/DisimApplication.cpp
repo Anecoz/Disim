@@ -14,5 +14,4 @@ void DisimApplication::render()
 void DisimApplication::update(double delta)
 {
   _camera.update(delta);
-  glfwSetCursorPos(_window, 200, 200);
 }

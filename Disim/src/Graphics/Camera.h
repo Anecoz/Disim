@@ -17,17 +17,22 @@ public:
   glm::mat4 getCombined() const { return _projection * _cameraMatrix; }
 
 private:
-  void updateCameraMovement(double delta);
-  void recalcCameraMatrix();
-  void fpsStyleUpdate(double delta);
-  void handleMouseMovement(int x, int y);
+  void freelookUpdate(double delta);
+  void handleFreelookInput(double delta);
 
-	glm::mat4 _projection;
-	glm::mat4 _cameraMatrix;
-	glm::vec3 _position;
+  glm::vec2 _prevFreelookMousePos;
+  bool _firstMouse;
+  double _yaw;
+  double _pitch;
+  double _roll;
+
+  glm::mat4 _projection;
+  glm::mat4 _cameraMatrix;
+  glm::vec3 _position;
   glm::vec3 _forward;
-  const glm::vec3 _up = glm::vec3(0.f, 1.f, 0.f);
+  glm::vec3 _right;
+  glm::vec3 _up;
   const double _speed = 0.05;
-  float _sensitivity = 1.0; // Higher value -> lower sens...
+  float _sensitivity = 0.005;
 };
 
