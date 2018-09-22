@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\src\Graphics\Camera.cpp" />
     <ClCompile Include="..\src\Graphics\DrawableCube.cpp" />
+    <ClCompile Include="..\src\Graphics\Grid.cpp" />
     <ClCompile Include="..\src\Graphics\Lowlevel\Fbo.cpp" />
     <ClCompile Include="..\src\Graphics\Lowlevel\IndexedVertexArray.cpp" />
     <ClCompile Include="..\src\Graphics\Lowlevel\Shader.cpp" />
@@ -34,11 +35,13 @@
     <ClCompile Include="..\src\Logic\DisimApplication.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Utils\GraphicsUtils.cpp" />
+    <ClCompile Include="..\src\Utils\OBJLoader.cpp" />
     <ClCompile Include="..\src\Utils\ShaderUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Graphics\Camera.h" />
     <ClInclude Include="..\src\Graphics\DrawableCube.h" />
+    <ClInclude Include="..\src\Graphics\Grid.h" />
     <ClInclude Include="..\src\Graphics\Lowlevel\Fbo.h" />
     <ClInclude Include="..\src\Graphics\Lowlevel\IndexedVertexArray.h" />
     <ClInclude Include="..\src\Graphics\Lowlevel\Shader.h" />
@@ -51,6 +54,7 @@
     <ClInclude Include="..\src\Logic\Application.h" />
     <ClInclude Include="..\src\Logic\DisimApplication.h" />
     <ClInclude Include="..\src\Utils\GraphicsUtils.h" />
+    <ClInclude Include="..\src\Utils\OBJLoader.h" />
     <ClInclude Include="..\src\Utils\ShaderUtils.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -112,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ProjectDir)..\external;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -125,6 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ProjectDir)..\external;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -140,6 +146,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -157,6 +164,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\external\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

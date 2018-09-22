@@ -3,6 +3,7 @@
 #include "Application.h"
 #include "../Graphics/DrawableCube.h"
 #include "../Graphics/Camera.h"
+#include "../Graphics/Grid.h"
 
 class DisimApplication : public Application
 {
@@ -15,5 +16,6 @@ public:
 
 private:
   DrawableCube _cube;
+  Grid _grid;
   Camera _camera;
 };

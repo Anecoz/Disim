@@ -11,6 +11,10 @@ IndexedVertexArray::IndexedVertexArray(GLfloat* vertices, GLuint* indices, GLint
 	unbind();
 }
 
+/*IndexedVertexArray::IndexedVertexArray(const std::vector<glm::vec3>& verts, const std::vector<unsigned int>& indices, GLint floatPerVertex)
+{
+}*/
+
 IndexedVertexArray::IndexedVertexArray(GLfloat* vertices, GLfloat* texCoords, GLuint* indices, GLint numVerts, GLint indicesCount, GLint texCount, GLint floatPerVertex)
 	: VertexArray(texCoords, vertices, numVerts, texCount, floatPerVertex) {
   _count = indicesCount;

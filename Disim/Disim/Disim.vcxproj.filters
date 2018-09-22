@@ -71,6 +71,12 @@
     <ClCompile Include="..\src\Graphics\DrawableCube.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Utils\OBJLoader.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Graphics\Grid.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Logic\Application.h">
@@ -116,6 +122,12 @@
       <Filter>LodePng</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Graphics\DrawableCube.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utils\OBJLoader.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Graphics\Grid.h">
       <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>

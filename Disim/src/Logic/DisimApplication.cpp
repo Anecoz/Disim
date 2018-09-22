@@ -8,7 +8,9 @@ DisimApplication::DisimApplication()
 
 void DisimApplication::render()
 {
-  _cube.draw(_camera);
+  //_cube.draw(_camera);
+  glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+  _grid.draw(_camera);
 }
 
 void DisimApplication::update(double delta)

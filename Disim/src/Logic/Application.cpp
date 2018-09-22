@@ -100,7 +100,7 @@ void Application::initWindowHandle()
 	}
 
 	glfwMakeContextCurrent(_window);
-	glfwSwapInterval(1); // Vsync or not
+	glfwSwapInterval(0); // Vsync or not
 
 	// Set input callbacks
   glfwSetInputMode(_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);

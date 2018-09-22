@@ -1,9 +1,13 @@
 #include "GraphicsUtils.h"
 
+#include <glm/glm.hpp>
+
 #include "../LodePng/lodepng.h"
+#include "OBJLoader.h"
 
 #include <iostream>
 #include <iomanip>
+#include <vector>
 
 IndexedVertexArray* GraphicsUtils::createUnitCube()
 {
@@ -84,6 +88,25 @@ IndexedVertexArray* GraphicsUtils::createSimpleQuad() {
 	indices[5] = 3;
 
 	return new IndexedVertexArray(vertices, indices, 4, 6, 2);
+}
+
+IndexedVertexArray* GraphicsUtils::loadObj(const std::string& filePath)
+{
+  std::vector<glm::vec3> verts;
+  std::vector<glm::vec3> normals;
+  std::vector<unsigned int> indices;
+
+  if (OBJLoader::loadFromFile(filePath, verts, indices, normals)) {
+    // Convert to float array
+    GLfloat* vertArr = new GLfloat[verts.size() * 3];
+    for (int i = 0; i < verts.size(); i++) {
+      vertArr[i * 3 + 0] = verts[i].x;
+      vertArr[i * 3 + 1] = verts[i].y;
+      vertArr[i * 3 + 2] = verts[i].z;
+    }
+    return new IndexedVertexArray(vertArr, &indices[0], verts.size(), indices.size(), 3);
+  }
+  return nullptr;
 }
 
 GLuint GraphicsUtils::loadPNGToTexture(const char* fileName, unsigned* width, unsigned* height) {
